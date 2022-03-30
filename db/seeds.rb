@@ -2,6 +2,13 @@ Game.delete_all
 Genre.delete_all
 Publisher.delete_all
 Platform.delete_all
+AdminUser.delete_all
+
+AdminUser.create(
+  email:                 "admin@example.com",
+  password:              "password",
+  password_confirmation: "password"
+)
 
 NUMBER_OF_GENRES = 10
 GAMES_PER_GENRE = 100
@@ -15,7 +22,7 @@ NUMBER_OF_GENRES.times do
     game = Game.create(
       game_name:    Faker::Game.title,
       release_year: Faker::Date.between(from: 20.years.ago, to: Date.today),
-      game_price:   Faker::Commerce.price,
+      price:        Faker::Commerce.price,
       genre_id:     game_genre.id,
       publisher_id: game_publisher.id,
       platform_id:  game_platforms.id
