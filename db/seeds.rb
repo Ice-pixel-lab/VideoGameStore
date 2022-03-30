@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Game.delete_all
+Genre.delete_all
+Publisher.delete_all
+Platform.delete_all
+
+NUMBER_OF_GENRES = 10
+GAMES_PER_GENRE = 100
+
+NUMBER_OF_GENRES.times do
+  game_genre = Genre.create(genre_name: Faker::Game.unique.genre)
+  game_publisher = Publisher.create(publisher_name: Faker::Company.unique.name)
+  game_platforms = Platform.create(platform_name: Faker::Game.unique.platform)
+
+  GAMES_PER_GENRE.times do
+    game = Game.create(
+      game_name:    Faker::Game.title,
+      release_year: Faker::Date.between(from: 20.years.ago, to: Date.today),
+      game_price:   Faker::Commerce.price,
+      genre_id:     game_genre.id,
+      publisher_id: game_publisher.id,
+      platform_id:  game_platforms.id
+    )
+  end
+end
+
+puts "Created #{Publisher.count} Publishers"
+puts "Created #{Genre.count} Game Gategories"
+puts "Created #{Game.count} Games"
