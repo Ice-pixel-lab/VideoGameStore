@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'publisher/index'
-  get 'publisher/show'
-  get 'platform/index'
-  get 'platform/show'
-  get 'game/index'
-  get 'game/show'
+  resources :game, only: %i[index show]
+  resources :publisher, only: %i[index show]
+  resources :platform, only: %i[index show]
+  resources :genre, only: %i[index show]
   get "welcome/index"
   root "welcome#index"
   devise_for :admin_users, ActiveAdmin::Devise.config

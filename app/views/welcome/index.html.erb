@@ -13,8 +13,8 @@
               <p class="card-text p-y-1">This game is played on the: <%= game.platform.platform_name%></p>
               <p class="card-text p-y-1">Created By: <%= game.publisher.publisher_name%></p>
               <p class="card-text p-y-1">Price: <%= game.price%></p>
-              <a class="card-link"><%= link_to "See More Games!", game_show_path%></a>
-              <a class="card-link"><%= link_to "See More From This Publisher!", publisher_show_path%></a>
+              <a class="card-link"><%= link_to "See More Games!", game_index_path %></a>
+              <a class="card-link"><%= link_to game.publisher.publisher_name, game.publisher %></a>
             </div>
           </div>
         </div>
