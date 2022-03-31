@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'publisher/index'
+  get 'publisher/show'
+  get 'platform/index'
+  get 'platform/show'
   get 'game/index'
   get 'game/show'
   get "welcome/index"
