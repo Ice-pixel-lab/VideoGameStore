@@ -1,2 +1,29 @@
 <h1>Game#show</h1>
-<p>Find me in app/views/game/show.html.erb</p>
+<h2 class = "title is-2"><%= @game.game_name %></h2>
+
+<p>
+  <strong> Platform: </strong>
+  <%= link_to @game.platform.platform_name, @game.platform %>
+</p>
+
+<p>
+  <strong> Genre: </strong>
+  <%= link_to @game.genre.genre_name, @game.genre %>
+</p>
+
+<p>
+  <strong> Release Year: </strong>
+  <%= @game.release_year %>
+</p>
+
+<p>
+  <strong> Rating: </strong>
+  <%= @game.price%>/5 Stars
+</p>
+
+<p>
+  <strong> City of Origin: </strong>
+  <%= @game.publisher.publisher_name %>
+</p>
+
+
