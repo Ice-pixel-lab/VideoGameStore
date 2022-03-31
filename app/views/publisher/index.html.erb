@@ -1,2 +1,17 @@
-<h1>Publisher#index</h1>
-<p>Find me in app/views/publisher/index.html.erb</p>
+<h2 class = "title is-2">Publisher#index</h2>
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @publishers.each do |publisher| %>
+    <tr>
+      <td><%= link_to publisher.publisher_name, publisher %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+  <%= paginate @publishers %>
