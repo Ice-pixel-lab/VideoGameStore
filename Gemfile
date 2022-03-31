@@ -81,3 +81,5 @@ gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 gem 'sassc-rails'
+
+gem 'kaminari'
