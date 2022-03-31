@@ -1,2 +1,14 @@
 <h1>Genre#show</h1>
-<p>Find me in app/views/genre/show.html.erb</p>
+<h2 class="title is-2"><%= @genre.genre_name %></h2>
+
+<p>
+  <%= @genre.genre_name %> has <%= @genre.games.count %> different games within it!
+</p>
+
+<ul>
+  <% @genre.games.each do |game| %>
+    <li>
+      <%= link_to game.game_name, game %> with a price of <%= game.price %>$
+    </li>
+  <% end %>
+</ul>
