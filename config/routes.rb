@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :game, only: %i[index show]
   resources :publisher, only: %i[index show]
   resources :platform, only: %i[index show]
