@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :game, only: %i[index show]
+
+  resources :game, only: %i[index show] do
+    collection do
+      get "search"
+    end
+  end
+
   resources :publisher, only: %i[index show]
   resources :platform, only: %i[index show]
   resources :genre, only: %i[index show]
