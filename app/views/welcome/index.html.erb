@@ -8,7 +8,7 @@
         <div class="col-md-4">
           <div class="card">
             <div class="card-block">
-              <h4 class="card-title"><%= game.game_name%></h4>
+              <h4 class="card-title"><%= link_to game.game_name, game %></h4>
               <h6 class="card-subtitle text-muted"><%= game.genre.genre_name%></h6>
               <p class="card-text p-y-1">This game is played on the: <%= game.platform.platform_name%></p>
               <p class="card-text p-y-1">Created By: <%= game.publisher.publisher_name%></p>

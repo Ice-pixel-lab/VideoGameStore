@@ -13,7 +13,20 @@
           <li class="list-group-item"><strong> Publisher: </strong> <%= link_to @game.publisher.publisher_name, @game.publisher %></li>
         </ul>
         <div class="card-body">
-          <button type="button" class="btn btn-secondary">Purchase</button>
+
+          <% if cart.include?(@game)%>
+            <%= button_to cart_path(@game), method: :delete do %>
+            ➖Remove from Cart
+          <% end %>
+
+          <% else %>
+            <%= form_with url: cart_index_path, method: :post do %>
+            <%= hidden_field_tag(:id, @game.id) %>
+            <%= button_tag "Add to Cart!" %>
+          <% end %>
+
+          <% end %>
+
         </div>
       </div>
     </div>

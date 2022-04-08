@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get "search"
     end
   end
-
+  resources :cart, only: %i[create destroy]
   resources :publisher, only: %i[index show]
   resources :platform, only: %i[index show]
   resources :genre, only: %i[index show]
