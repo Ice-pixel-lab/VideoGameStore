@@ -83,3 +83,4 @@ gem 'pundit'
 gem 'sassc-rails'
 
 gem 'kaminari'
+gem 'stripe'
