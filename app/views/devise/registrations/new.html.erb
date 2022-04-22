@@ -8,6 +8,25 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+    <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "123 Main Stress" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "Winnipeg" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :province %><br />
+    <%= collection_select(:province_id, :province_id, Province.all, :id, :name,
+    {
+      include_blank: 'Select a Province'
+    }) %>
+  </div>
+
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>

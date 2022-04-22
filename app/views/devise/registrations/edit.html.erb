@@ -12,6 +12,24 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+    <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :email, autofocus: true, autocomplete: "123 Main Stress" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :email, autofocus: true, autocomplete: "Winnipeg" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :province %><br />
+    <%= collection_select(:province_id, :province_id, Province.all, :id, :name,
+    {
+      include_blank: 'Select a Province'
+    }) %>
+  </div>
+
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>

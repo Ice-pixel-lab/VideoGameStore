@@ -5,5 +5,4 @@ class Game < ApplicationRecord
 
   validates :game_name, :price, :release_year, presence: true
   validates :game_name, uniqueness: true
-  validates :release_year, :price, numericality: true
 end

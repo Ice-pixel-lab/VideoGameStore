@@ -2,7 +2,20 @@ Game.delete_all
 Genre.delete_all
 Publisher.delete_all
 Platform.delete_all
+Province.delete_all
 AdminUser.delete_all
+
+Province.create(
+  name: "Manitoba"
+)
+
+Province.create(
+  name: "Alberta"
+)
+
+Province.create(
+  name: "Ontario"
+)
 
 AdminUser.create(
   email:                 "admin@example.com",
