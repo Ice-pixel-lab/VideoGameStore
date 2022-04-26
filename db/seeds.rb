@@ -42,8 +42,3 @@ NUMBER_OF_GENRES.times do
     )
   end
 end
-
-puts "Create #{Platform.count} Platforms"
-puts "Created #{Publisher.count} Publishers"
-puts "Created #{Genre.count} Game Gategories"
-puts "Created #{Game.count} Games"

@@ -24,22 +24,6 @@
         <p class = "alert"><%= flash[:alert] %></p>
       <% end %>
 
-      <ul>
-        <li>
-          Cart
-          <%if cart.present? %>
-            <sup><% cart.size %></sup>
-            <ul>
-              <% cart.each do |game| %>
-              <li>
-                <%= game.game_name %> <%= button_to cart_path(game), method: :delete do %> ➖ <% end %>
-              </li>
-              <% end %>
-            </ul>
-            <% end %>
-        </li>
-      </ul>
-
     </header>
     <main>
       <%= yield %>

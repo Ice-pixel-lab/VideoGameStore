@@ -84,3 +84,6 @@ gem 'sassc-rails'
 
 gem 'kaminari'
 gem 'stripe'
+
+gem 'rubocop'
+gem 'rubocop-rails'

@@ -51,12 +51,10 @@
 
         <div class="col-md-4 mb-3">
             <label for="state">Province</label>
-            <select class="custom-select d-block w-100" id="state" required>
-              <option value="">Choose...</option>
-              <option>Manitoba</option>
-              <option>Alberta</option>
-              <option>Ontario</option>
-            </select>
+<%= collection_select(:province_id, :province_id, Province.all, :id, :name,
+    {
+      include_blank: 'Select a Province'
+    }) %>
             <div class="invalid-feedback">
               Please provide a valid province.
             </div>
