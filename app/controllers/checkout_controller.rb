@@ -19,14 +19,7 @@ class CheckoutController < ApplicationController
         quantity: 1
       ]
     )
-
     redirect_to @session.url, allow_other_host: true
-
-    # respond_to do | format |
-
-    # format.js                           #app/views/checkout/create.js.erb
-
-    # end
   end
 
   def success

@@ -32,9 +32,9 @@ NUMBER_OF_GENRES.times do
   game_platforms = Platform.create(platform_name: Faker::Game.unique.platform)
 
   GAMES_PER_GENRE.times do
-    game = Game.create(
+    Game.create(
       game_name:    Faker::Game.title,
-      release_year: Faker::Date.between(from: 20.years.ago, to: Date.today),
+      release_year: Faker::Date.between(from: 20.years.ago, to: Time.zone.today),
       price:        Faker::Commerce.price,
       genre_id:     game_genre.id,
       publisher_id: game_publisher.id,

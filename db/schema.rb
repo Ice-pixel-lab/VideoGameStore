@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_22_163427) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_203111) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_163427) do
     t.integer "genre_id", null: false
     t.integer "publisher_id", null: false
     t.integer "platform_id", null: false
+    t.index ["game_name"], name: "index_games_on_game_name", unique: true
     t.index ["genre_id"], name: "index_games_on_genre_id"
     t.index ["platform_id"], name: "index_games_on_platform_id"
     t.index ["publisher_id"], name: "index_games_on_publisher_id"
@@ -55,12 +56,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_163427) do
     t.string "genre_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["genre_name"], name: "index_genres_on_genre_name", unique: true
   end
 
   create_table "platforms", force: :cascade do |t|
     t.string "platform_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["platform_name"], name: "index_platforms_on_platform_name", unique: true
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -73,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_163427) do
     t.string "publisher_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["publisher_name"], name: "index_publishers_on_publisher_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
