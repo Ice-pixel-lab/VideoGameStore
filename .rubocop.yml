@@ -28,6 +28,10 @@ Style/InlineComment:
   Description: 'Avoid inline comments.'
   Enabled: false
 
+Metrics/MethodLength:
+  Description: 'Limit Methods to 20 lines of code. (Default is 10)'
+  Max: 20
+
 Layout/LineLength:
   Description: 'Limit lines to 100 characters. (Default is 80)'
   Max: 100
